@@ -24,6 +24,7 @@ import {
   deprecatedElement,
   membershipElement,
   pullquoteElement,
+  ldElement,
   richlinkElement,
   tableElement,
 } from "../src";
@@ -61,6 +62,7 @@ import {
   sampleImage,
   sampleInteractive,
   sampleInteractiveAtom,
+  sampleLd,
   sampleMap,
   sampleMembership,
   samplePullquote,
@@ -75,6 +77,7 @@ import type { WindowType } from "./types";
 // Only show focus when the user is keyboard navigating, not when
 // they click a text field.
 FocusStyleManager.onlyShowFocusOnTabs();
+const ldElementName = "ld";
 const embedElementName = "embed";
 const imageElementName = "image";
 const demoImageElementName = "demo-image-element";
@@ -104,6 +107,7 @@ type Name =
   | typeof codeElementName
   | typeof formElementName
   | typeof pullquoteElementName
+  | typeof ldElementName
   | typeof richlinkElementName
   | typeof interactiveElementName
   | typeof videoElementName
@@ -193,6 +197,7 @@ const {
     code: codeElement,
     form: deprecatedElement,
     pullquote: pullquoteElement,
+    ld: ldElement,
     "rich-link": richlinkElement,
     video: createStandardElement({
       createCaptionPlugins,
@@ -379,6 +384,7 @@ const createEditor = (server: CollabServer) => {
   };
 
   const buttonData = [
+      { label: "Linked Data", name: ldElementName, values: sampleLd },
     {
       label: "Campaign Callout List",
       name: campaignCalloutListElementName,
