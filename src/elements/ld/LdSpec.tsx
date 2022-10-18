@@ -26,4 +26,36 @@ export const ldFields = {
     { text: "inline", value: "inline" },
     { text: "showcase", value: "showcase" },
   ]),
+
+  subject: createTextField({
+    absentOnEmpty: true,
+    placeholder: "Enter subject here…",
+
+  }),
+
+  predicate: createTextField({
+    absentOnEmpty: true,
+    placeholder: "Enter predicate here…",
+    validators: [
+      required("predicate cannot be empty")
+    ],
+  }),
+
+  object: createTextField({
+    absentOnEmpty: true,
+    placeholder: "Enter object here…",
+    validators: [
+      required("Object cannot be empty")
+    ],
+  }),
+
+  graph: createTextField({
+    absentOnEmpty: true,
+    placeholder: "Enter graph here…",
+  }),
+
+
+
+
+
 };
